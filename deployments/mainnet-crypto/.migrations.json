@@ -1,0 +1,16 @@
+{
+  "PoolAddressesProviderRegistry": 1689616451,
+  "LogicLibraries": 1689616453,
+  "Treasury": 1689616468,
+  "PoolAddressesProvider:MainnetCrypto:aave-v3-core@0.0.1": 1689616651,
+  "Oracles:MainnetCrypto:aave-v3-core@0.0.1": 1689616656,
+  "PythOracles:MainnetCrypto:aave-v3-core@0.0.1": 1689616662,
+  "InitPythOracles:MainnetCrypto:aave-v3-core@0.0.1": 1689616663,
+  "PoolConfigurator": 1689616675,
+  "ACLManager:MainnetCrypto:aave-v3-core@0.0.1": 1689616693,
+  "PoolInitalization:MainnetCrypto:aave-v3-core@0.0.1": 1689616706,
+  "Incentives:MainnetCrypto:aave-v3-periphery@0.0.1": 1689616723,
+  "TokenImplementations:MainnetCrypto:aave-v3-core@0.0.1": 1689616749,
+  "ReservesInit:MainnetCrypto:aave-v3-core@0.0.1": 1689616772,
+  "PeripheryInit:MainnetCrypto:aave-v3-periphery@0.0.1": 1689616772
+}

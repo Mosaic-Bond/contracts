@@ -1,0 +1,16 @@
+{
+  "PoolAddressesProviderRegistry": 1689615177,
+  "LogicLibraries": 1689615202,
+  "Treasury": 1689615221,
+  "PoolAddressesProvider:MainnetReax:aave-v3-core@0.0.1": 1689615234,
+  "Oracles:MainnetReax:aave-v3-core@0.0.1": 1689615235,
+  "PythOracles:MainnetReax:aave-v3-core@0.0.1": 1689615241,
+  "InitPythOracles:MainnetReax:aave-v3-core@0.0.1": 1689615242,
+  "PoolConfigurator": 1689615258,
+  "ACLManager:MainnetReax:aave-v3-core@0.0.1": 1689615268,
+  "PoolInitalization:MainnetReax:aave-v3-core@0.0.1": 1689615282,
+  "Incentives:MainnetReax:aave-v3-periphery@0.0.1": 1689615294,
+  "TokenImplementations:MainnetReax:aave-v3-core@0.0.1": 1689615315,
+  "ReservesInit:MainnetReax:aave-v3-core@0.0.1": 1689615340,
+  "PeripheryInit:MainnetReax:aave-v3-periphery@0.0.1": 1689615340
+}

@@ -1,0 +1,604 @@
+{
+  "address": "0x075826345d548f5E0Ca08A3Ed047a2EB33752dd7",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_diaOracle",
+          "type": "address"
+        },
+        {
+          "internalType": "address[]",
+          "name": "assets",
+          "type": "address[]"
+        },
+        {
+          "internalType": "string[]",
+          "name": "sources",
+          "type": "string[]"
+        },
+        {
+          "internalType": "address",
+          "name": "fallbackOracle",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "baseCurrency",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "baseCurrencyUnit",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "asset",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "source",
+          "type": "string"
+        }
+      ],
+      "name": "AssetSourceUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "baseCurrency",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "baseCurrencyUnit",
+          "type": "uint256"
+        }
+      ],
+      "name": "BaseCurrencySet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "fallbackOracle",
+          "type": "address"
+        }
+      ],
+      "name": "FallbackOracleUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "BASE_CURRENCY",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "BASE_CURRENCY_UNIT",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "diaOracle",
+      "outputs": [
+        {
+          "internalType": "contract IDIAOracleV2",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "asset",
+          "type": "address"
+        }
+      ],
+      "name": "getAssetPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "assets",
+          "type": "address[]"
+        }
+      ],
+      "name": "getAssetsPrices",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getFallbackOracle",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "asset",
+          "type": "address"
+        }
+      ],
+      "name": "getSourceOfAsset",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "assets",
+          "type": "address[]"
+        },
+        {
+          "internalType": "string[]",
+          "name": "sources",
+          "type": "string[]"
+        }
+      ],
+      "name": "setAssetSources",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "fallbackOracle",
+          "type": "address"
+        }
+      ],
+      "name": "setFallbackOracle",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x4768fb44f3e3d2d4b8ef9cbfcb29306004aafc4913d242ace3d549573a70a5df",
+  "receipt": {
+    "to": null,
+    "from": "0x84b7A5Bc208a8aA820fE95969737bF008c32d732",
+    "contractAddress": "0x075826345d548f5E0Ca08A3Ed047a2EB33752dd7",
+    "transactionIndex": 0,
+    "gasUsed": "1091381",
+    "logsBloom": "0x00000002000000000000000000000000000000000000000000801000000000000080000200000000000000000220000000000000030000000000010000000802000000000084000000001001000000000081000000000002000000040000240000040000020000002400000000000800000002000800000000000080000000400010000000010000000000000000000100100000080000000000000000000000000080000000002000010000000000000000000000000000000000000000400000004000000000000000000300000000000000000000000200000000000024001000000000000000000000000000000000000000800000000000020000000000",
+    "blockHash": "0x452cc5f442e63030dec62542a72097a0496048a9caf4288fa2914a898f485d1c",
+    "transactionHash": "0x4768fb44f3e3d2d4b8ef9cbfcb29306004aafc4913d242ace3d549573a70a5df",
+    "logs": [
+      {
+        "transactionIndex": 0,
+        "blockNumber": 273402043,
+        "transactionHash": "0x4768fb44f3e3d2d4b8ef9cbfcb29306004aafc4913d242ace3d549573a70a5df",
+        "address": "0x075826345d548f5E0Ca08A3Ed047a2EB33752dd7",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x00000000000000000000000084b7a5bc208a8aa820fe95969737bf008c32d732"
+        ],
+        "data": "0x",
+        "logIndex": 0,
+        "blockHash": "0x452cc5f442e63030dec62542a72097a0496048a9caf4288fa2914a898f485d1c"
+      },
+      {
+        "transactionIndex": 0,
+        "blockNumber": 273402043,
+        "transactionHash": "0x4768fb44f3e3d2d4b8ef9cbfcb29306004aafc4913d242ace3d549573a70a5df",
+        "address": "0x075826345d548f5E0Ca08A3Ed047a2EB33752dd7",
+        "topics": [
+          "0xce7a780d33665b1ea097af5f155e3821b809ecbaa839d3b33aa83ba28168cefb",
+          "0x000000000000000000000000639d8e570e86ace5a5fcd5f856fd86e30c5bcc2b"
+        ],
+        "data": "0x",
+        "logIndex": 1,
+        "blockHash": "0x452cc5f442e63030dec62542a72097a0496048a9caf4288fa2914a898f485d1c"
+      },
+      {
+        "transactionIndex": 0,
+        "blockNumber": 273402043,
+        "transactionHash": "0x4768fb44f3e3d2d4b8ef9cbfcb29306004aafc4913d242ace3d549573a70a5df",
+        "address": "0x075826345d548f5E0Ca08A3Ed047a2EB33752dd7",
+        "topics": [
+          "0xb3d3828022bef305e83964615bd3414d3b23667ff75f905fd5416ecffba1a03c",
+          "0x000000000000000000000000be14ba84d7000898ec6a35b1c44b295b8e239e31",
+          "0xaf15fcf587c1e91dadc4171b1315263f43b9604d27bcef691aa32373bcdd1783"
+        ],
+        "data": "0x",
+        "logIndex": 2,
+        "blockHash": "0x452cc5f442e63030dec62542a72097a0496048a9caf4288fa2914a898f485d1c"
+      },
+      {
+        "transactionIndex": 0,
+        "blockNumber": 273402043,
+        "transactionHash": "0x4768fb44f3e3d2d4b8ef9cbfcb29306004aafc4913d242ace3d549573a70a5df",
+        "address": "0x075826345d548f5E0Ca08A3Ed047a2EB33752dd7",
+        "topics": [
+          "0xb3d3828022bef305e83964615bd3414d3b23667ff75f905fd5416ecffba1a03c",
+          "0x0000000000000000000000006b206d802682c2b5c6a9af46c1c03206dcb40bcb",
+          "0xee62665949c883f9e0f6f002eac32e00bd59dfe6c34e92a91c37d6a8322d6489"
+        ],
+        "data": "0x",
+        "logIndex": 3,
+        "blockHash": "0x452cc5f442e63030dec62542a72097a0496048a9caf4288fa2914a898f485d1c"
+      },
+      {
+        "transactionIndex": 0,
+        "blockNumber": 273402043,
+        "transactionHash": "0x4768fb44f3e3d2d4b8ef9cbfcb29306004aafc4913d242ace3d549573a70a5df",
+        "address": "0x075826345d548f5E0Ca08A3Ed047a2EB33752dd7",
+        "topics": [
+          "0xb3d3828022bef305e83964615bd3414d3b23667ff75f905fd5416ecffba1a03c",
+          "0x0000000000000000000000002dd5d0ef7bae5c5b93270e82699528b3bd766cfa",
+          "0xff064b881a0c0fff844177f881a313ff894bfc6093d33b5514e34d7faa41b7ef"
+        ],
+        "data": "0x",
+        "logIndex": 4,
+        "blockHash": "0x452cc5f442e63030dec62542a72097a0496048a9caf4288fa2914a898f485d1c"
+      },
+      {
+        "transactionIndex": 0,
+        "blockNumber": 273402043,
+        "transactionHash": "0x4768fb44f3e3d2d4b8ef9cbfcb29306004aafc4913d242ace3d549573a70a5df",
+        "address": "0x075826345d548f5E0Ca08A3Ed047a2EB33752dd7",
+        "topics": [
+          "0xb3d3828022bef305e83964615bd3414d3b23667ff75f905fd5416ecffba1a03c",
+          "0x0000000000000000000000008214bf94ad62ff5932826b204eaf4034b8de9db6",
+          "0x91879a0c0be4e43cacda1599ac414205651f4a62b614b6be9e5318a182c33eb0"
+        ],
+        "data": "0x",
+        "logIndex": 5,
+        "blockHash": "0x452cc5f442e63030dec62542a72097a0496048a9caf4288fa2914a898f485d1c"
+      },
+      {
+        "transactionIndex": 0,
+        "blockNumber": 273402043,
+        "transactionHash": "0x4768fb44f3e3d2d4b8ef9cbfcb29306004aafc4913d242ace3d549573a70a5df",
+        "address": "0x075826345d548f5E0Ca08A3Ed047a2EB33752dd7",
+        "topics": [
+          "0xb3d3828022bef305e83964615bd3414d3b23667ff75f905fd5416ecffba1a03c",
+          "0x0000000000000000000000008f91a345f3bc2a7c89f4f5edf60ccc0ef36c65a8",
+          "0x249c8958b600e018a89f20e8ac17cbf0501fdda1898b06eb4352755bd97fe12b"
+        ],
+        "data": "0x",
+        "logIndex": 6,
+        "blockHash": "0x452cc5f442e63030dec62542a72097a0496048a9caf4288fa2914a898f485d1c"
+      },
+      {
+        "transactionIndex": 0,
+        "blockNumber": 273402043,
+        "transactionHash": "0x4768fb44f3e3d2d4b8ef9cbfcb29306004aafc4913d242ace3d549573a70a5df",
+        "address": "0x075826345d548f5E0Ca08A3Ed047a2EB33752dd7",
+        "topics": [
+          "0xe27c4c1372396a3d15a9922f74f9dfc7c72b1ad6d63868470787249c356454c1",
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "logIndex": 7,
+        "blockHash": "0x452cc5f442e63030dec62542a72097a0496048a9caf4288fa2914a898f485d1c"
+      }
+    ],
+    "blockNumber": 273402043,
+    "cumulativeGasUsed": "1091381",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x14D42b3eC03899aBDD3d10E62791973e02De7718",
+    [
+      "0xbe14BA84d7000898ec6A35B1C44B295b8E239E31",
+      "0x6B206d802682C2b5C6a9AF46C1c03206dcb40Bcb",
+      "0x2dd5D0EF7BAE5c5B93270e82699528B3bd766CFa",
+      "0x8214Bf94ad62ff5932826B204eAF4034b8DE9Db6",
+      "0x8F91A345f3Bc2A7c89f4f5eDf60cCc0Ef36C65a8"
+    ],
+    [
+      "WETH/USD",
+      "BTC/USD",
+      "USDC/USD",
+      "USDT/USD",
+      "TLOS/USD"
+    ],
+    "0x639d8e570e86acE5a5fCD5f856Fd86e30C5BCc2B",
+    "0x0000000000000000000000000000000000000000",
+    "1"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "c2f1ca9f17713a4afd4ff013a257169c",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_diaOracle\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"assets\",\"type\":\"address[]\"},{\"internalType\":\"string[]\",\"name\":\"sources\",\"type\":\"string[]\"},{\"internalType\":\"address\",\"name\":\"fallbackOracle\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"baseCurrency\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"baseCurrencyUnit\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"asset\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"source\",\"type\":\"string\"}],\"name\":\"AssetSourceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"baseCurrency\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseCurrencyUnit\",\"type\":\"uint256\"}],\"name\":\"BaseCurrencySet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"fallbackOracle\",\"type\":\"address\"}],\"name\":\"FallbackOracleUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"BASE_CURRENCY\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"BASE_CURRENCY_UNIT\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"diaOracle\",\"outputs\":[{\"internalType\":\"contract IDIAOracleV2\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"asset\",\"type\":\"address\"}],\"name\":\"getAssetPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"assets\",\"type\":\"address[]\"}],\"name\":\"getAssetsPrices\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getFallbackOracle\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"asset\",\"type\":\"address\"}],\"name\":\"getSourceOfAsset\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"assets\",\"type\":\"address[]\"},{\"internalType\":\"string[]\",\"name\":\"sources\",\"type\":\"string[]\"}],\"name\":\"setAssetSources\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"fallbackOracle\",\"type\":\"address\"}],\"name\":\"setFallbackOracle\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Prasad\",\"events\":{\"AssetSourceUpdated(address,string)\":{\"details\":\"Emitted after the price source of an asset is updated\",\"params\":{\"asset\":\"The address of the asset\",\"source\":\"The price source of the asset\"}},\"BaseCurrencySet(address,uint256)\":{\"details\":\"Emitted after the base currency is set\",\"params\":{\"baseCurrency\":\"The base currency of used for price quotes\",\"baseCurrencyUnit\":\"The unit of the base currency\"}},\"FallbackOracleUpdated(address)\":{\"details\":\"Emitted after the address of fallback oracle is updated\",\"params\":{\"fallbackOracle\":\"The address of the fallback oracle\"}}},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"assets\":\"The addresses of the assets\",\"baseCurrency\":\"The base currency used for the price quotes. If USD is used, base currency is 0x0\",\"baseCurrencyUnit\":\"The unit of the base currency\",\"fallbackOracle\":\"The address of the fallback oracle to use if the data of an        aggregator is not consistent\",\"sources\":\"The address of the source of each asset\"}},\"getAssetPrice(address)\":{\"params\":{\"asset\":\"The address of the asset\"},\"returns\":{\"_0\":\"The price of the asset\"}},\"getAssetsPrices(address[])\":{\"params\":{\"assets\":\"The list of assets addresses\"},\"returns\":{\"_0\":\"The prices of the given assets\"}},\"getFallbackOracle()\":{\"returns\":{\"_0\":\"The address of the fallback oracle\"}},\"getSourceOfAsset(address)\":{\"params\":{\"asset\":\"The address of the asset\"},\"returns\":{\"_0\":\"The address of the source\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner.\"},\"setAssetSources(address[],string[])\":{\"params\":{\"assets\":\"The addresses of the assets\",\"sources\":\"The addresses of the price sources\"}},\"setFallbackOracle(address)\":{\"params\":{\"fallbackOracle\":\"The address of the fallback oracle\"}},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"title\":\"PriceOracle\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Constructor\"},\"getAssetPrice(address)\":{\"notice\":\"Returns the asset price in the base currency\"},\"getAssetsPrices(address[])\":{\"notice\":\"Returns a list of prices from a list of assets addresses\"},\"getFallbackOracle()\":{\"notice\":\"Returns the address of the fallback oracle\"},\"getSourceOfAsset(address)\":{\"notice\":\"Returns the address of the source for an asset address\"},\"setAssetSources(address[],string[])\":{\"notice\":\"Sets or replaces price sources of assets\"},\"setFallbackOracle(address)\":{\"notice\":\"Sets the fallback oracle\"}},\"notice\":\"Contract to get asset prices, manage price sources and update the fallback oracle - Use of DIA Aggregators as first source of price - If the returned price by a Chainlink aggregator is <= 0, the call is forwarded to a fallback oracle\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/utils/oracle/DIAOracle.sol\":\"DIAOracle\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1000},\"remappings\":[]},\"sources\":{\"@aave/core-v3/contracts/dependencies/chainlink/AggregatorInterface.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// Chainlink Contracts v0.8\\npragma solidity ^0.8.0;\\n\\ninterface AggregatorInterface {\\n  function latestAnswer() external view returns (int256);\\n\\n  function latestTimestamp() external view returns (uint256);\\n\\n  function latestRound() external view returns (uint256);\\n\\n  function getAnswer(uint256 roundId) external view returns (int256);\\n\\n  function getTimestamp(uint256 roundId) external view returns (uint256);\\n\\n  event AnswerUpdated(int256 indexed current, uint256 indexed roundId, uint256 updatedAt);\\n\\n  event NewRound(uint256 indexed roundId, address indexed startedBy, uint256 startedAt);\\n}\\n\",\"keccak256\":\"0x07df0744d1a393c574d7ee11b75a1690a82f3136a79c76b933724872298bf718\",\"license\":\"MIT\"},\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby disabling any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xba43b97fba0d32eb4254f6a5a297b39a19a247082a02d6e69349e071e2946218\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"contracts/utils/oracle/DIAOracle.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\nimport {IDIAOracle, IPriceOracleGetter} from \\\"./IPriceOracle.sol\\\";\\nimport \\\"@aave/core-v3/contracts/dependencies/chainlink/AggregatorInterface.sol\\\";\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\n\\n\\n/**\\n * @title PriceOracle\\n * @author Prasad\\n * @notice Contract to get asset prices, manage price sources and update the fallback oracle\\n * - Use of DIA Aggregators as first source of price\\n * - If the returned price by a Chainlink aggregator is <= 0, the call is forwarded to a fallback oracle\\n */\\ncontract DIAOracle is IDIAOracle, Ownable {\\n  // Map of asset price sources (asset => priceSource)\\n  mapping(address => string) private assetsSources;\\n  IDIAOracleV2 public immutable diaOracle;\\n  \\n  IPriceOracleGetter private _fallbackOracle;\\n  address public immutable BASE_CURRENCY;\\n  uint public immutable BASE_CURRENCY_UNIT;\\n\\n  /**\\n   * @notice Constructor\\n   * @param assets The addresses of the assets\\n   * @param sources The address of the source of each asset\\n   * @param fallbackOracle The address of the fallback oracle to use if the data of an\\n   *        aggregator is not consistent\\n   * @param baseCurrency The base currency used for the price quotes. If USD is used, base currency is 0x0\\n   * @param baseCurrencyUnit The unit of the base currency\\n   */\\n  constructor(\\n    address _diaOracle,\\n    address[] memory assets,\\n    string[] memory sources,\\n    address fallbackOracle,\\n    address baseCurrency,\\n    uint baseCurrencyUnit\\n  ) {\\n    diaOracle = IDIAOracleV2(_diaOracle);\\n    _setFallbackOracle(fallbackOracle);\\n    _setAssetsSources(assets, sources);\\n    BASE_CURRENCY = baseCurrency;\\n    BASE_CURRENCY_UNIT = baseCurrencyUnit;\\n    emit BaseCurrencySet(baseCurrency, baseCurrencyUnit);\\n  }\\n\\n  /// @inheritdoc IDIAOracle\\n  function setAssetSources(address[] calldata assets, string[] calldata sources)\\n    external\\n    override\\n    onlyOwner\\n  {\\n    _setAssetsSources(assets, sources);\\n  }\\n\\n  /// @inheritdoc IDIAOracle\\n  function setFallbackOracle(address fallbackOracle)\\n    external\\n    override\\n    onlyOwner\\n  {\\n    _setFallbackOracle(fallbackOracle);\\n  }\\n\\n  /**\\n   * @notice Internal function to set the sources for each asset\\n   * @param assets The addresses of the assets\\n   * @param sources The address of the source of each asset\\n   */\\n  function _setAssetsSources(address[] memory assets, string[] memory sources) internal {\\n    require(assets.length == sources.length, \\\"INVALID_ARGUMENT\\\");\\n    for (uint256 i = 0; i < assets.length; i++) {\\n      assetsSources[assets[i]] = (sources[i]);\\n      emit AssetSourceUpdated(assets[i], sources[i]);\\n    }\\n  }\\n\\n  /**\\n   * @notice Internal function to set the fallback oracle\\n   * @param fallbackOracle The address of the fallback oracle\\n   */\\n  function _setFallbackOracle(address fallbackOracle) internal {\\n    _fallbackOracle = IPriceOracleGetter(fallbackOracle);\\n    emit FallbackOracleUpdated(fallbackOracle);\\n  }\\n\\n  /// @inheritdoc IDIAOracle\\n  function getAssetPrice(address asset) public override returns (uint) {\\n    string memory key = assetsSources[asset];\\n\\n    if (asset == BASE_CURRENCY) {\\n      return BASE_CURRENCY_UNIT;\\n    } else if (bytes(key).length == 0) {\\n      return _fallbackOracle.getAssetPrice(asset);\\n    } else {\\n      (uint128 price,) = diaOracle.getValue(key);\\n      if (price > 0) {\\n        return uint256(price);\\n      } else {\\n        return _fallbackOracle.getAssetPrice(asset);\\n      }\\n    }\\n  }\\n\\n  /// @inheritdoc IDIAOracle\\n  function getAssetsPrices(address[] calldata assets)\\n    external\\n    override\\n    returns (uint[] memory)\\n  {\\n    uint[] memory prices = new uint[](assets.length);\\n    for (uint256 i = 0; i < assets.length; i++) {\\n      prices[i] = getAssetPrice(assets[i]);\\n    }\\n    return prices;\\n  }\\n\\n  /// @inheritdoc IDIAOracle\\n  function getSourceOfAsset(address asset) external view override returns (string memory) {\\n    return (assetsSources[asset]);\\n  }\\n\\n  /// @inheritdoc IDIAOracle\\n  function getFallbackOracle() external view returns (address) {\\n    return address(_fallbackOracle);\\n  }\\n}\\n\\n\\ninterface IDIAOracleV2{\\n    function getValue(string memory) external returns (uint128, uint128);\\n}\",\"keccak256\":\"0x8d4ec32a0f4f1b87f6b5a0d902a3c9ab2961de3929bd0efd443d6b4aa81eabc3\",\"license\":\"MIT\"},\"contracts/utils/oracle/IPriceOracle.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0\\npragma solidity ^0.8.0;\\n\\n/**\\n * @title IPriceOracleGetter\\n * @author Aave\\n * @notice Interface for the Aave price oracle.\\n */\\ninterface IPriceOracleGetter {\\n  /**\\n   * @notice Returns the base currency address\\n   * @dev Address 0x0 is reserved for USD as base currency.\\n   * @return Returns the base currency address.\\n   */\\n  function BASE_CURRENCY() external view returns (address);\\n\\n  /**\\n   * @notice Returns the base currency unit\\n   * @dev 1 ether for ETH, 1e8 for USD.\\n   * @return Returns the base currency unit.\\n   */\\n  function BASE_CURRENCY_UNIT() external view returns (uint);\\n\\n  /**\\n   * @notice Returns the asset price in the base currency\\n   * @param asset The address of the asset\\n   * @return The price of the asset\\n   */\\n  function getAssetPrice(address asset) external view returns (uint);\\n}\\n\\n/**\\n * @title IPriceOracle interface\\n * @dev IAaveOracle without the address provider \\n * @author Aave\\n * @notice Defines the basic interface for the Aave Oracle\\n */\\ninterface IPriceOracle is IPriceOracleGetter {\\n  /**\\n   * @dev Emitted after the base currency is set\\n   * @param baseCurrency The base currency of used for price quotes\\n   * @param baseCurrencyUnit The unit of the base currency\\n   */\\n  event BaseCurrencySet(address indexed baseCurrency, uint256 baseCurrencyUnit);\\n\\n  /**\\n   * @dev Emitted after the price source of an asset is updated\\n   * @param asset The address of the asset\\n   * @param source The price source of the asset\\n   */\\n  event AssetSourceUpdated(address indexed asset, address indexed source);\\n\\n  /**\\n   * @dev Emitted after the address of fallback oracle is updated\\n   * @param fallbackOracle The address of the fallback oracle\\n   */\\n  event FallbackOracleUpdated(address indexed fallbackOracle);\\n\\n  /**\\n   * @notice Sets or replaces price sources of assets\\n   * @param assets The addresses of the assets\\n   * @param sources The addresses of the price sources\\n   */\\n  function setAssetSources(address[] calldata assets, address[] calldata sources) external;\\n\\n  /**\\n   * @notice Sets the fallback oracle\\n   * @param fallbackOracle The address of the fallback oracle\\n   */\\n  function setFallbackOracle(address fallbackOracle) external;\\n\\n  /**\\n   * @notice Returns a list of prices from a list of assets addresses\\n   * @param assets The list of assets addresses\\n   * @return The prices of the given assets\\n   */\\n  function getAssetsPrices(address[] calldata assets) external view returns (uint[] memory);\\n\\n  /**\\n   * @notice Returns the address of the source for an asset address\\n   * @param asset The address of the asset\\n   * @return The address of the source\\n   */\\n  function getSourceOfAsset(address asset) external view returns (address);\\n\\n  /**\\n   * @notice Returns the address of the fallback oracle\\n   * @return The address of the fallback oracle\\n   */\\n  function getFallbackOracle() external view returns (address);\\n}\\n\\n\\n/**\\n * @title IPythOracle interface\\n * @dev IPythOracle interface is a subset of the IPythOracleGetter interface\\n * @author \\n * @notice Defines the basic interface for the Aave Oracle\\n */\\ninterface IPythOracle is IPriceOracleGetter {\\n  /**\\n   * @dev Emitted after the base currency is set\\n   * @param baseCurrency The base currency of used for price quotes\\n   * @param baseCurrencyUnit The unit of the base currency\\n   */\\n  event BaseCurrencySet(address indexed baseCurrency, uint256 baseCurrencyUnit);\\n\\n  /**\\n   * @dev Emitted after the price source of an asset is updated\\n   * @param asset The address of the asset\\n   * @param source The price source of the asset\\n   */\\n  event AssetSourceUpdated(address indexed asset, bytes32 indexed source);\\n\\n  /**\\n   * @dev Emitted after the address of fallback oracle is updated\\n   * @param fallbackOracle The address of the fallback oracle\\n   */\\n  event FallbackOracleUpdated(address indexed fallbackOracle);\\n\\n  /**\\n   * @notice Sets or replaces price sources of assets\\n   * @param assets The addresses of the assets\\n   * @param sources The addresses of the price sources\\n   */\\n  function setAssetSources(address[] calldata assets, bytes32[] calldata sources) external;\\n\\n  /**\\n   * @notice Sets the fallback oracle\\n   * @param fallbackOracle The address of the fallback oracle\\n   */\\n  function setFallbackOracle(address fallbackOracle) external;\\n\\n  /**\\n   * @notice Returns a list of prices from a list of assets addresses\\n   * @param assets The list of assets addresses\\n   * @return The prices of the given assets\\n   */\\n  function getAssetsPrices(address[] calldata assets) external view returns (uint[] memory);\\n\\n  /**\\n   * @notice Returns the address of the source for an asset address\\n   * @param asset The address of the asset\\n   * @return The address of the source\\n   */\\n  function getSourceOfAsset(address asset) external view returns (bytes32);\\n\\n  /**\\n   * @notice Returns the address of the fallback oracle\\n   * @return The address of the fallback oracle\\n   */\\n  function getFallbackOracle() external view returns (address);\\n  \\n  /**\\n   * @notice Updates the prices of the assets passed as parameter\\n   */\\n  function updatePrices(bytes[] calldata pythUpdateData) external;\\n}\\n\\n\\n/**\\n * @title IDIAOracle interface\\n * @author Prasad\\n * @notice Defines the basic interface for the Dia Oracle\\n */\\ninterface IDIAOracle  {\\n  /**\\n   * @dev Emitted after the base currency is set\\n   * @param baseCurrency The base currency of used for price quotes\\n   * @param baseCurrencyUnit The unit of the base currency\\n   */\\n  event BaseCurrencySet(address indexed baseCurrency, uint256 baseCurrencyUnit);\\n\\n  /**\\n   * @dev Emitted after the price source of an asset is updated\\n   * @param asset The address of the asset\\n   * @param source The price source of the asset\\n   */\\n  event AssetSourceUpdated(address indexed asset, string indexed source);\\n\\n  /**\\n   * @dev Emitted after the address of fallback oracle is updated\\n   * @param fallbackOracle The address of the fallback oracle\\n   */\\n  event FallbackOracleUpdated(address indexed fallbackOracle);\\n\\n  /**\\n   * @notice Sets or replaces price sources of assets\\n   * @param assets The addresses of the assets\\n   * @param sources The addresses of the price sources\\n   */\\n  function setAssetSources(address[] calldata assets, string[] calldata sources) external;\\n\\n  /**\\n   * @notice Sets the fallback oracle\\n   * @param fallbackOracle The address of the fallback oracle\\n   */\\n  function setFallbackOracle(address fallbackOracle) external;\\n\\n  /**\\n   * @notice Returns a list of prices from a list of assets addresses\\n   * @param assets The list of assets addresses\\n   * @return The prices of the given assets\\n   */\\n  function getAssetsPrices(address[] calldata assets) external returns (uint[] memory);\\n\\n  /**\\n   * @notice Returns the address of the source for an asset address\\n   * @param asset The address of the asset\\n   * @return The address of the source\\n   */\\n  function getSourceOfAsset(address asset) external view returns (string memory);\\n\\n  /**\\n   * @notice Returns the address of the fallback oracle\\n   * @return The address of the fallback oracle\\n   */\\n  function getFallbackOracle() external view returns (address);\\n\\n  /**\\n   * @notice Returns the asset price in the base currency\\n   * @param asset The address of the asset\\n   * @return The price of the asset\\n   */\\n  function getAssetPrice(address asset) external returns (uint);\\n}\\n\",\"keccak256\":\"0xf988fa54e446185b17a1d50f63973691fe4423ffa311fff5c21b91d9b3b63e61\",\"license\":\"AGPL-3.0\"}},\"version\":1}",
+  "bytecode": "0x60e06040523480156200001157600080fd5b506040516200166d3803806200166d83398101604081905262000034916200045f565b6200003f33620000b6565b6001600160a01b038616608052620000578362000106565b62000063858562000150565b6001600160a01b03821660a081905260c08290526040518281527fe27c4c1372396a3d15a9922f74f9dfc7c72b1ad6d63868470787249c356454c19060200160405180910390a250505050505062000727565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b600280546001600160a01b0319166001600160a01b0383169081179091556040517fce7a780d33665b1ea097af5f155e3821b809ecbaa839d3b33aa83ba28168cefb90600090a250565b8051825114620001995760405162461bcd60e51b815260206004820152601060248201526f1253959053125117d05491d55351539560821b604482015260640160405180910390fd5b60005b8251811015620002ae57818181518110620001bb57620001bb62000571565b602002602001015160016000858481518110620001dc57620001dc62000571565b60200260200101516001600160a01b03166001600160a01b03168152602001908152602001600020908162000212919062000615565b5081818151811062000228576200022862000571565b60200260200101516040516200023f9190620006e1565b60405180910390208382815181106200025c576200025c62000571565b60200260200101516001600160a01b03167fb3d3828022bef305e83964615bd3414d3b23667ff75f905fd5416ecffba1a03c60405160405180910390a380620002a581620006ff565b9150506200019c565b505050565b80516001600160a01b0381168114620002cb57600080fd5b919050565b634e487b7160e01b600052604160045260246000fd5b604051601f8201601f191681016001600160401b0381118282101715620003115762000311620002d0565b604052919050565b60006001600160401b03821115620003355762000335620002d0565b5060051b60200190565b60005b838110156200035c57818101518382015260200162000342565b50506000910152565b6000601f83818401126200037857600080fd5b82516020620003916200038b8362000319565b620002e6565b82815260059290921b85018101918181019087841115620003b157600080fd5b8287015b84811015620004535780516001600160401b0380821115620003d75760008081fd5b818a0191508a603f830112620003ed5760008081fd5b85820151604082821115620004065762000406620002d0565b62000419828b01601f19168901620002e6565b92508183528c81838601011115620004315760008081fd5b62000442828985018387016200033f565b5050845250918301918301620003b5565b50979650505050505050565b60008060008060008060c087890312156200047957600080fd5b6200048487620002b3565b602088810151919750906001600160401b0380821115620004a457600080fd5b818a0191508a601f830112620004b957600080fd5b8151620004ca6200038b8262000319565b81815260059190911b8301840190848101908d831115620004ea57600080fd5b938501935b8285101562000513576200050385620002b3565b82529385019390850190620004ef565b60408d0151909a5094505050808311156200052d57600080fd5b50506200053d89828a0162000365565b9450506200054e60608801620002b3565b92506200055e60808801620002b3565b915060a087015190509295509295509295565b634e487b7160e01b600052603260045260246000fd5b600181811c908216806200059c57607f821691505b602082108103620005bd57634e487b7160e01b600052602260045260246000fd5b50919050565b601f821115620002ae57600081815260208120601f850160051c81016020861015620005ec5750805b601f850160051c820191505b818110156200060d57828155600101620005f8565b505050505050565b81516001600160401b03811115620006315762000631620002d0565b620006498162000642845462000587565b84620005c3565b602080601f831160018114620006815760008415620006685750858301515b600019600386901b1c1916600185901b1785556200060d565b600085815260208120601f198616915b82811015620006b25788860151825594840194600190910190840162000691565b5085821015620006d15787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b60008251620006f58184602087016200033f565b9190910192915050565b6000600182016200072057634e487b7160e01b600052601160045260246000fd5b5060010190565b60805160a05160c051610f026200076b6000396000818161016301526104f20152600081816101fc01526104b801526000818160f301526105c80152610f026000f3fe608060405234801561001057600080fd5b50600436106100d45760003560e01c80638da5cb5b11610081578063b3596f071161005b578063b3596f07146101e4578063e19f4700146101f7578063f2fde38b1461021e57600080fd5b80638da5cb5b1461019357806392bf2be0146101a45780639d23d9f2146101c457600080fd5b806364bb7dce116100b257806364bb7dce14610143578063715018a6146101565780638c89b64f1461015e57600080fd5b8063170aee73146100d95780632ce773cd146100ee5780636210308c14610132575b600080fd5b6100ec6100e73660046109e6565b610231565b005b6101157f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b0390911681526020015b60405180910390f35b6002546001600160a01b0316610115565b6100ec610151366004610a5b565b610245565b6100ec61029b565b6101857f000000000000000000000000000000000000000000000000000000000000000081565b604051908152602001610129565b6000546001600160a01b0316610115565b6101b76101b23660046109e6565b6102af565b6040516101299190610aeb565b6101d76101d2366004610b1e565b61035b565b6040516101299190610b60565b6101856101f23660046109e6565b610410565b6101157f000000000000000000000000000000000000000000000000000000000000000081565b6100ec61022c3660046109e6565b6106ef565b610239610781565b610242816107db565b50565b61024d610781565b6102958484808060200260200160405190810160405280939291908181526020018383602002808284376000920191909152506102909250859150869050610beb565b610832565b50505050565b6102a3610781565b6102ad6000610989565b565b6001600160a01b03811660009081526001602052604090208054606091906102d690610cc0565b80601f016020809104026020016040519081016040528092919081815260200182805461030290610cc0565b801561034f5780601f106103245761010080835404028352916020019161034f565b820191906000526020600020905b81548152906001019060200180831161033257829003601f168201915b50505050509050919050565b606060008267ffffffffffffffff81111561037857610378610ba4565b6040519080825280602002602001820160405280156103a1578160200160208202803683370190505b50905060005b83811015610408576103d98585838181106103c4576103c4610cf4565b90506020020160208101906101f291906109e6565b8282815181106103eb576103eb610cf4565b60209081029190910101528061040081610d0a565b9150506103a7565b509392505050565b6001600160a01b0381166000908152600160205260408120805482919061043690610cc0565b80601f016020809104026020016040519081016040528092919081815260200182805461046290610cc0565b80156104af5780601f10610484576101008083540402835291602001916104af565b820191906000526020600020905b81548152906001019060200180831161049257829003601f168201915b505050505090507f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316836001600160a01b03160361051757507f000000000000000000000000000000000000000000000000000000000000000092915050565b80516000036105955760025460405163b3596f0760e01b81526001600160a01b0385811660048301529091169063b3596f0790602401602060405180830381865afa15801561056a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061058e9190610d31565b9392505050565b6040517f960384a00000000000000000000000000000000000000000000000000000000081526000906001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000169063960384a0906105fd908590600401610aeb565b60408051808303816000875af115801561061b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061063f9190610d6f565b5090506fffffffffffffffffffffffffffffffff811615610673576fffffffffffffffffffffffffffffffff169392505050565b60025460405163b3596f0760e01b81526001600160a01b0386811660048301529091169063b3596f0790602401602060405180830381865afa1580156106bd573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106e19190610d31565b949350505050565b50919050565b6106f7610781565b6001600160a01b0381166107785760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201527f646472657373000000000000000000000000000000000000000000000000000060648201526084015b60405180910390fd5b61024281610989565b6000546001600160a01b031633146102ad5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015260640161076f565b6002805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0383169081179091556040517fce7a780d33665b1ea097af5f155e3821b809ecbaa839d3b33aa83ba28168cefb90600090a250565b80518251146108835760405162461bcd60e51b815260206004820152601060248201527f494e56414c49445f415247554d454e5400000000000000000000000000000000604482015260640161076f565b60005b8251811015610984578181815181106108a1576108a1610cf4565b6020026020010151600160008584815181106108bf576108bf610cf4565b60200260200101516001600160a01b03166001600160a01b0316815260200190815260200160002090816108f39190610df0565b5081818151811061090657610906610cf4565b602002602001015160405161091b9190610eb0565b604051809103902083828151811061093557610935610cf4565b60200260200101516001600160a01b03167fb3d3828022bef305e83964615bd3414d3b23667ff75f905fd5416ecffba1a03c60405160405180910390a38061097c81610d0a565b915050610886565b505050565b600080546001600160a01b0383811673ffffffffffffffffffffffffffffffffffffffff19831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6000602082840312156109f857600080fd5b81356001600160a01b038116811461058e57600080fd5b60008083601f840112610a2157600080fd5b50813567ffffffffffffffff811115610a3957600080fd5b6020830191508360208260051b8501011115610a5457600080fd5b9250929050565b60008060008060408587031215610a7157600080fd5b843567ffffffffffffffff80821115610a8957600080fd5b610a9588838901610a0f565b90965094506020870135915080821115610aae57600080fd5b50610abb87828801610a0f565b95989497509550505050565b60005b83811015610ae2578181015183820152602001610aca565b50506000910152565b6020815260008251806020840152610b0a816040850160208701610ac7565b601f01601f19169190910160400192915050565b60008060208385031215610b3157600080fd5b823567ffffffffffffffff811115610b4857600080fd5b610b5485828601610a0f565b90969095509350505050565b6020808252825182820181905260009190848201906040850190845b81811015610b9857835183529284019291840191600101610b7c565b50909695505050505050565b634e487b7160e01b600052604160045260246000fd5b604051601f8201601f1916810167ffffffffffffffff81118282101715610be357610be3610ba4565b604052919050565b600067ffffffffffffffff80841115610c0657610c06610ba4565b8360051b6020610c17818301610bba565b868152918501918181019036841115610c2f57600080fd5b865b84811015610cb457803586811115610c495760008081fd5b8801601f3681830112610c5c5760008081fd5b813588811115610c6e57610c6e610ba4565b610c7f818301601f19168801610bba565b91508082523687828501011115610c965760008081fd5b80878401888401376000908201870152845250918301918301610c31565b50979650505050505050565b600181811c90821680610cd457607f821691505b6020821081036106e957634e487b7160e01b600052602260045260246000fd5b634e487b7160e01b600052603260045260246000fd5b600060018201610d2a57634e487b7160e01b600052601160045260246000fd5b5060010190565b600060208284031215610d4357600080fd5b5051919050565b80516fffffffffffffffffffffffffffffffff81168114610d6a57600080fd5b919050565b60008060408385031215610d8257600080fd5b610d8b83610d4a565b9150610d9960208401610d4a565b90509250929050565b601f82111561098457600081815260208120601f850160051c81016020861015610dc95750805b601f850160051c820191505b81811015610de857828155600101610dd5565b505050505050565b815167ffffffffffffffff811115610e0a57610e0a610ba4565b610e1e81610e188454610cc0565b84610da2565b602080601f831160018114610e535760008415610e3b5750858301515b600019600386901b1c1916600185901b178555610de8565b600085815260208120601f198616915b82811015610e8257888601518255948401946001909101908401610e63565b5085821015610ea05787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b60008251610ec2818460208701610ac7565b919091019291505056fea2646970667358221220928e05c0ebd670c232f808309b82caa7227092418f4d2bd8dbb5f40c802827a964736f6c63430008130033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100d45760003560e01c80638da5cb5b11610081578063b3596f071161005b578063b3596f07146101e4578063e19f4700146101f7578063f2fde38b1461021e57600080fd5b80638da5cb5b1461019357806392bf2be0146101a45780639d23d9f2146101c457600080fd5b806364bb7dce116100b257806364bb7dce14610143578063715018a6146101565780638c89b64f1461015e57600080fd5b8063170aee73146100d95780632ce773cd146100ee5780636210308c14610132575b600080fd5b6100ec6100e73660046109e6565b610231565b005b6101157f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b0390911681526020015b60405180910390f35b6002546001600160a01b0316610115565b6100ec610151366004610a5b565b610245565b6100ec61029b565b6101857f000000000000000000000000000000000000000000000000000000000000000081565b604051908152602001610129565b6000546001600160a01b0316610115565b6101b76101b23660046109e6565b6102af565b6040516101299190610aeb565b6101d76101d2366004610b1e565b61035b565b6040516101299190610b60565b6101856101f23660046109e6565b610410565b6101157f000000000000000000000000000000000000000000000000000000000000000081565b6100ec61022c3660046109e6565b6106ef565b610239610781565b610242816107db565b50565b61024d610781565b6102958484808060200260200160405190810160405280939291908181526020018383602002808284376000920191909152506102909250859150869050610beb565b610832565b50505050565b6102a3610781565b6102ad6000610989565b565b6001600160a01b03811660009081526001602052604090208054606091906102d690610cc0565b80601f016020809104026020016040519081016040528092919081815260200182805461030290610cc0565b801561034f5780601f106103245761010080835404028352916020019161034f565b820191906000526020600020905b81548152906001019060200180831161033257829003601f168201915b50505050509050919050565b606060008267ffffffffffffffff81111561037857610378610ba4565b6040519080825280602002602001820160405280156103a1578160200160208202803683370190505b50905060005b83811015610408576103d98585838181106103c4576103c4610cf4565b90506020020160208101906101f291906109e6565b8282815181106103eb576103eb610cf4565b60209081029190910101528061040081610d0a565b9150506103a7565b509392505050565b6001600160a01b0381166000908152600160205260408120805482919061043690610cc0565b80601f016020809104026020016040519081016040528092919081815260200182805461046290610cc0565b80156104af5780601f10610484576101008083540402835291602001916104af565b820191906000526020600020905b81548152906001019060200180831161049257829003601f168201915b505050505090507f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316836001600160a01b03160361051757507f000000000000000000000000000000000000000000000000000000000000000092915050565b80516000036105955760025460405163b3596f0760e01b81526001600160a01b0385811660048301529091169063b3596f0790602401602060405180830381865afa15801561056a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061058e9190610d31565b9392505050565b6040517f960384a00000000000000000000000000000000000000000000000000000000081526000906001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000169063960384a0906105fd908590600401610aeb565b60408051808303816000875af115801561061b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061063f9190610d6f565b5090506fffffffffffffffffffffffffffffffff811615610673576fffffffffffffffffffffffffffffffff169392505050565b60025460405163b3596f0760e01b81526001600160a01b0386811660048301529091169063b3596f0790602401602060405180830381865afa1580156106bd573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106e19190610d31565b949350505050565b50919050565b6106f7610781565b6001600160a01b0381166107785760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201527f646472657373000000000000000000000000000000000000000000000000000060648201526084015b60405180910390fd5b61024281610989565b6000546001600160a01b031633146102ad5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015260640161076f565b6002805473ffffffffffffffffffffffffffffffffffffffff19166001600160a01b0383169081179091556040517fce7a780d33665b1ea097af5f155e3821b809ecbaa839d3b33aa83ba28168cefb90600090a250565b80518251146108835760405162461bcd60e51b815260206004820152601060248201527f494e56414c49445f415247554d454e5400000000000000000000000000000000604482015260640161076f565b60005b8251811015610984578181815181106108a1576108a1610cf4565b6020026020010151600160008584815181106108bf576108bf610cf4565b60200260200101516001600160a01b03166001600160a01b0316815260200190815260200160002090816108f39190610df0565b5081818151811061090657610906610cf4565b602002602001015160405161091b9190610eb0565b604051809103902083828151811061093557610935610cf4565b60200260200101516001600160a01b03167fb3d3828022bef305e83964615bd3414d3b23667ff75f905fd5416ecffba1a03c60405160405180910390a38061097c81610d0a565b915050610886565b505050565b600080546001600160a01b0383811673ffffffffffffffffffffffffffffffffffffffff19831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6000602082840312156109f857600080fd5b81356001600160a01b038116811461058e57600080fd5b60008083601f840112610a2157600080fd5b50813567ffffffffffffffff811115610a3957600080fd5b6020830191508360208260051b8501011115610a5457600080fd5b9250929050565b60008060008060408587031215610a7157600080fd5b843567ffffffffffffffff80821115610a8957600080fd5b610a9588838901610a0f565b90965094506020870135915080821115610aae57600080fd5b50610abb87828801610a0f565b95989497509550505050565b60005b83811015610ae2578181015183820152602001610aca565b50506000910152565b6020815260008251806020840152610b0a816040850160208701610ac7565b601f01601f19169190910160400192915050565b60008060208385031215610b3157600080fd5b823567ffffffffffffffff811115610b4857600080fd5b610b5485828601610a0f565b90969095509350505050565b6020808252825182820181905260009190848201906040850190845b81811015610b9857835183529284019291840191600101610b7c565b50909695505050505050565b634e487b7160e01b600052604160045260246000fd5b604051601f8201601f1916810167ffffffffffffffff81118282101715610be357610be3610ba4565b604052919050565b600067ffffffffffffffff80841115610c0657610c06610ba4565b8360051b6020610c17818301610bba565b868152918501918181019036841115610c2f57600080fd5b865b84811015610cb457803586811115610c495760008081fd5b8801601f3681830112610c5c5760008081fd5b813588811115610c6e57610c6e610ba4565b610c7f818301601f19168801610bba565b91508082523687828501011115610c965760008081fd5b80878401888401376000908201870152845250918301918301610c31565b50979650505050505050565b600181811c90821680610cd457607f821691505b6020821081036106e957634e487b7160e01b600052602260045260246000fd5b634e487b7160e01b600052603260045260246000fd5b600060018201610d2a57634e487b7160e01b600052601160045260246000fd5b5060010190565b600060208284031215610d4357600080fd5b5051919050565b80516fffffffffffffffffffffffffffffffff81168114610d6a57600080fd5b919050565b60008060408385031215610d8257600080fd5b610d8b83610d4a565b9150610d9960208401610d4a565b90509250929050565b601f82111561098457600081815260208120601f850160051c81016020861015610dc95750805b601f850160051c820191505b81811015610de857828155600101610dd5565b505050505050565b815167ffffffffffffffff811115610e0a57610e0a610ba4565b610e1e81610e188454610cc0565b84610da2565b602080601f831160018114610e535760008415610e3b5750858301515b600019600386901b1c1916600185901b178555610de8565b600085815260208120601f198616915b82811015610e8257888601518255948401946001909101908401610e63565b5085821015610ea05787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b60008251610ec2818460208701610ac7565b919091019291505056fea2646970667358221220928e05c0ebd670c232f808309b82caa7227092418f4d2bd8dbb5f40c802827a964736f6c63430008130033",
+  "devdoc": {
+    "author": "Prasad",
+    "events": {
+      "AssetSourceUpdated(address,string)": {
+        "details": "Emitted after the price source of an asset is updated",
+        "params": {
+          "asset": "The address of the asset",
+          "source": "The price source of the asset"
+        }
+      },
+      "BaseCurrencySet(address,uint256)": {
+        "details": "Emitted after the base currency is set",
+        "params": {
+          "baseCurrency": "The base currency of used for price quotes",
+          "baseCurrencyUnit": "The unit of the base currency"
+        }
+      },
+      "FallbackOracleUpdated(address)": {
+        "details": "Emitted after the address of fallback oracle is updated",
+        "params": {
+          "fallbackOracle": "The address of the fallback oracle"
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "params": {
+          "assets": "The addresses of the assets",
+          "baseCurrency": "The base currency used for the price quotes. If USD is used, base currency is 0x0",
+          "baseCurrencyUnit": "The unit of the base currency",
+          "fallbackOracle": "The address of the fallback oracle to use if the data of an        aggregator is not consistent",
+          "sources": "The address of the source of each asset"
+        }
+      },
+      "getAssetPrice(address)": {
+        "params": {
+          "asset": "The address of the asset"
+        },
+        "returns": {
+          "_0": "The price of the asset"
+        }
+      },
+      "getAssetsPrices(address[])": {
+        "params": {
+          "assets": "The list of assets addresses"
+        },
+        "returns": {
+          "_0": "The prices of the given assets"
+        }
+      },
+      "getFallbackOracle()": {
+        "returns": {
+          "_0": "The address of the fallback oracle"
+        }
+      },
+      "getSourceOfAsset(address)": {
+        "params": {
+          "asset": "The address of the asset"
+        },
+        "returns": {
+          "_0": "The address of the source"
+        }
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+      },
+      "setAssetSources(address[],string[])": {
+        "params": {
+          "assets": "The addresses of the assets",
+          "sources": "The addresses of the price sources"
+        }
+      },
+      "setFallbackOracle(address)": {
+        "params": {
+          "fallbackOracle": "The address of the fallback oracle"
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "title": "PriceOracle",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "constructor": {
+        "notice": "Constructor"
+      },
+      "getAssetPrice(address)": {
+        "notice": "Returns the asset price in the base currency"
+      },
+      "getAssetsPrices(address[])": {
+        "notice": "Returns a list of prices from a list of assets addresses"
+      },
+      "getFallbackOracle()": {
+        "notice": "Returns the address of the fallback oracle"
+      },
+      "getSourceOfAsset(address)": {
+        "notice": "Returns the address of the source for an asset address"
+      },
+      "setAssetSources(address[],string[])": {
+        "notice": "Sets or replaces price sources of assets"
+      },
+      "setFallbackOracle(address)": {
+        "notice": "Sets the fallback oracle"
+      }
+    },
+    "notice": "Contract to get asset prices, manage price sources and update the fallback oracle - Use of DIA Aggregators as first source of price - If the returned price by a Chainlink aggregator is <= 0, the call is forwarded to a fallback oracle",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 10074,
+        "contract": "contracts/utils/oracle/DIAOracle.sol:DIAOracle",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 28748,
+        "contract": "contracts/utils/oracle/DIAOracle.sol:DIAOracle",
+        "label": "assetsSources",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_string_storage)"
+      },
+      {
+        "astId": 28754,
+        "contract": "contracts/utils/oracle/DIAOracle.sol:DIAOracle",
+        "label": "_fallbackOracle",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_contract(IPriceOracleGetter)29080"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IPriceOracleGetter)29080": {
+        "encoding": "inplace",
+        "label": "contract IPriceOracleGetter",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_string_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => string)",
+        "numberOfBytes": "32",
+        "value": "t_string_storage"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
